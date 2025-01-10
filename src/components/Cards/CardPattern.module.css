@@ -1,0 +1,119 @@
+.main_patterns{
+    width: inherit;
+    height: 400px;
+    background: #84A98C;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card_left_area{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-left: 62px;
+}
+
+.card_text h1{
+    font-size: 64px;
+    max-width: 1000px;
+    margin-bottom: 0px;
+    margin-top: 0;
+}
+
+.card_text h3{
+    font-size: 24px;
+    max-width: 500px;
+
+}
+
+.card_text{
+    margin-bottom: 15px;
+}
+
+.last_2_blocks{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.status{
+    max-width: 440px;
+    min-width: 380px;
+    height: 60px;
+    background: #52796F;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.status span, .date span, .time span{
+    font-size: 24px;
+    margin-left: 20px;
+    color: #CAD2C5;
+    font-family: 'Inter Extra Bold', sans-serif;
+}
+
+.status_info{
+    background: #CAD2C5;
+    border-radius: 5px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.card_right_area{
+    display: flex;
+    flex-direction: column;
+}
+.date{
+    width: 280px;
+    max-width: 550px;
+    min-width: 280px;
+    height: 60px;
+    background: #52796F;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.time{
+    width: 250px;
+    max-width: 300px;
+    min-width: 250px;
+    height: 60px;
+    background: #52796F;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card_button{
+    background: #52796F;
+    width: 300px;
+    height: 60px;
+    border-radius: 15px;
+    font-size: 24px;
+    color: #CAD2C5;
+    border: 0;
+    z-index: 1;
+    position: absolute;
+    margin-top: 290px;
+}
+
+.card_button:hover{
+    background: rgb(62, 92, 86);
+}
+
+.vote_img{
+    opacity: 50%;
+    width: 380px;
+    height: 380px;
+    z-index: 0;
+}

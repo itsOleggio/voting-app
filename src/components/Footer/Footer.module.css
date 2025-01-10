@@ -1,0 +1,67 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    background: #84A98C;
+    border-radius: 25px;
+    padding: 20px 30px;
+    width: inherit;
+    height: 160px;
+}
+
+.first_block {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 70px;
+}
+
+.first_block span {
+    font-size: 18px;
+}
+
+.second_block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.second_block_lowers{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.third_block {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: auto;
+}
+
+.logo {
+    width: 200px;
+    height: 80px;
+}
+
+.footer h3{
+    margin-top: 0px;
+    font-family: "Inter Thin", serif;
+    font-size: 20px;
+}
+
+
+.footer a {
+    color: #2F3E46;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.a_upper {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* При наведении */
+.footer a:hover {
+    color: #000000;
+}
+

@@ -1,0 +1,10 @@
+.header{
+    color: #000000;
+    font-family: "Inter Thin", serif;
+    font-size: 22px;
+    font-weight: 100;
+    display: flex;
+    width: 756px;
+    height: 106px;
+    margin: 70px 0 80px 0; ;
+}
