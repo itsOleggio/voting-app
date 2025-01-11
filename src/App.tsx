@@ -1,25 +1,18 @@
-import React from 'react';
 import './App.css';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // @ts-expect-error
-import {Header, Footer, CardPattern} from "./components";
+import { Home, Voting, NoFound } from './pages';
 
 const App: React.FC = () => {
     return (
-        <>
-            <Header></Header>
-            <main>
-                <div className="main_first_line">
-                    <h1>Голосования</h1>
-                    <button>Ввести код</button>
-                </div>
-                <div className="cardsArea">
-                    <CardPattern></CardPattern>
-                </div>
-
-            </main>
-            <Footer></Footer>
-        </>
+        <Router>
+            <Routes>
+                <Route path="*" element={<NoFound />} />
+                <Route index element={<Home />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/voting" element={<Voting />} />
+            </Routes>
+        </Router>
     );
 };
 
