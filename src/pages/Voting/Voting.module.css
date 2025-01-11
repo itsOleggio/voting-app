@@ -1,0 +1,19 @@
+h2{
+    font-size: 32px;
+}
+
+.candidatesArea{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.back_button{
+    margin: 0 0 20px 0;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #52796F;
+    font-family: "Inter Thin", serif;
+}

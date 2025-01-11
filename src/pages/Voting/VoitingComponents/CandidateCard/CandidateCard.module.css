@@ -1,0 +1,24 @@
+.candidate_card{
+    width: 380px;
+    height: 504px;
+    background: #84A98C;
+    border-radius: 25px;
+}
+
+.candidate_name{
+    margin: 8px 0 15px 0;
+    text-align: center;
+}
+
+.candidate_photo{
+    width: 380px;
+    height: 380px;
+    border-radius: 25px 25px 0 0;
+    opacity: 70%;
+}
+
+.candidate_text{
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}

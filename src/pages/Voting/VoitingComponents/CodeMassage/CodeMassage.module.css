@@ -1,0 +1,17 @@
+.codeMassage{
+    background: #84A98C;
+    border-radius: 25px;
+    width: 100%;
+    height: 300px;
+}
+
+.codeMassage h3{
+    font-size: 60px;
+    width: 360px;
+    margin: 40px 0 0 20px;
+}
+
+.codeMassage p{
+    font-size:24px;
+    margin: 20px 0 0 20px;
+}
