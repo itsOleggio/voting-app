@@ -1,24 +1,29 @@
+import { useNavigate } from 'react-router-dom';
 import style from './CandidateCard.module.css';
 import no_photo from '../../../../constant/Photo_Candidates/no_photo.jpg';
 
 interface CandidateCardProps {
+    candidateId: number;
     name: string;
     city: string;
     age: number;
-    onDetailsClick: () => void;
 }
 
-export const CandidateCard = ({ name, city, age, onDetailsClick }: CandidateCardProps) => {
+export const CandidateCard = ({ candidateId, name, city, age }: CandidateCardProps) => {
+    const navigate = useNavigate();
+
+    const handleDetailsClick = () => {
+        navigate(`/candidate/${candidateId}`);
+    };
 
     return (
-        <div className={style.candidate_card} onClick={onDetailsClick}>
-            <img src={no_photo} alt="" className={style.candidate_photo}/>
+        <div className={style.candidate_card} onClick={handleDetailsClick}>
+            <img src={no_photo} alt="" className={style.candidate_photo} />
             <h3 className={style.candidate_name}>{name}</h3>
             <div className={style.candidate_text}>
-                <span>{city},</span>
+                <span>{city} </span>
                 <span>{age} лет</span>
             </div>
         </div>
     );
-}
-
+};

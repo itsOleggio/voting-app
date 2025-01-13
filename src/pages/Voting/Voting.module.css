@@ -17,3 +17,8 @@ h2{
     color: #52796F;
     font-family: "Inter Thin", serif;
 }
+
+.back_button:hover{
+    cursor: pointer;
+    color: #84A98C;
+}

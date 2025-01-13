@@ -110,6 +110,7 @@
 
 .card_button:hover{
     background: rgb(62, 92, 86);
+    Cursor: pointer;
 }
 
 .vote_img{

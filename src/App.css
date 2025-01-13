@@ -23,6 +23,7 @@ main {
 
 .main_first_line button:hover {
     background: rgb(62, 92, 86);
+    cursor: pointer;
 }
 
 .cardsArea{

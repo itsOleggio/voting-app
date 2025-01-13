@@ -6,14 +6,12 @@ import candidatesData from "../../constant/candidates.json";
 import style from "./Voting.module.css";
 import { useNavigate } from 'react-router-dom';
 import {CodeMassage} from "./VoitingComponents/CodeMassage/CodeMassage.tsx";
+import {InputCodeField} from "./VoitingComponents/InputCodeField/InputCodeField.tsx";
 
 export const Voting = () => {
 
     const navigate = useNavigate();
 
-    const handleDetailsClick = (candidateName: string) => {
-        alert(`Подробная информация о кандидате: ${candidateName}`);
-    }
 
     const handleBackClick = () =>{
         navigate(-1);
@@ -29,18 +27,20 @@ export const Voting = () => {
                 <div className={style.candidatesArea}>
                     {candidatesData.map((candidate) => (
                         <CandidateCard
-                            key={candidate.name}
+                            key={candidate.candidateId}
+                            candidateId={candidate.candidateId}
                             name={candidate.name}
                             city={candidate.city}
                             age={candidate.age}
-                            onDetailsClick={() => handleDetailsClick(candidate.name)}
                         />
                     ))}
                 </div>
                 <h2>Голосование</h2>
                 <CodeMassage></CodeMassage>
                 <h2>Код для голосования</h2>
+                <InputCodeField></InputCodeField>
             </main>
+            <h2>Вопросы и ответы</h2>
             <Footer/>
         </>
     );

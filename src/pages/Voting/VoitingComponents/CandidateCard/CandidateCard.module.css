@@ -5,6 +5,11 @@
     border-radius: 25px;
 }
 
+.candidate_card:hover{
+    cursor: pointer;
+    background: #52796F;
+}
+
 .candidate_name{
     margin: 8px 0 15px 0;
     text-align: center;
