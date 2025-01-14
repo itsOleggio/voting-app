@@ -1,0 +1,145 @@
+.no_candedate{
+    margin-top: 40px;
+    width: 100%;
+    height: 200px;
+    background: #84A98C;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.no_candedate h2 {
+    font-size: 48px;
+}
+
+.back_button{
+    margin: 0 0 20px 0;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #52796F;
+    font-family: "Inter Thin", serif;
+}
+
+.back_button:hover{
+    cursor: pointer;
+    color: #000000;
+}
+
+.candidate_block{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin-bottom: 20px;
+}
+
+.name_and_but_area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.name_and_but_area button{
+    margin-top: 23px;
+}
+
+.candidate_photo_area{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 442px;
+
+}
+
+.candidate_photo_area img{
+    width: 442px;
+    height: 580px;
+    border-radius: 25px;
+}
+
+.constst, .link_to_program{
+    background: #84A98C;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 24px;
+    color: #000000;
+    padding-left: 20px;
+}
+
+.candidate_info{
+    width: 1070px;
+    height: 767px;
+    background: #84A98C;
+    border-radius: 25px;
+}
+
+.candidate_info h3{
+    margin: 24px 0 0 24px;
+}
+.candidate_info p{
+    margin: 10px 0 5px 0;
+}
+.candidate_text{
+    display: flex;
+    flex-direction: row;
+    margin-left: 24px;
+    margin-right: 24px;
+    justify-content: space-between;
+}
+
+.personal_info{
+    background: #CAD2C5;
+    width: 450px;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    padding-left: 5px;
+    color: #2F3E46;
+}
+
+.candidate_description{
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.personal_description{
+    background: #CAD2C5;
+    min-width: 90%;
+    height: 570px;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+
+    color: #2F3E46;
+    font-size: 16px;
+    margin-bottom: 24px;
+
+}
+
+/*.personal_description:hover{*/
+/*    overflow-y: scroll;*/
+/*}*/
+
+.link_to_program img, .constst img{
+    width: 32px;
+    height: 32px;
+    border-radius: 0;
+    margin-right: 10px;
+    display: flex;
+    ;
+}
+
+.link_to_program span, .constst span{
+    margin-right: 10px;
+}
+
+.link_to_program img:hover, .constst img:hover{
+    cursor: pointer;
+}

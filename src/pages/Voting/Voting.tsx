@@ -35,10 +35,8 @@ export const Voting = () => {
                         />
                     ))}
                 </div>
-                <h2>Голосование</h2>
-                <CodeMassage></CodeMassage>
-                <h2>Код для голосования</h2>
-                <InputCodeField></InputCodeField>
+                <CodeMassage/>
+                <InputCodeField/>
             </main>
             <h2>Вопросы и ответы</h2>
             <Footer/>
