@@ -1,6 +1,5 @@
-import {Header} from "../../components/Header/Header.tsx";
-import {Footer} from "../../components/Footer/Footer.tsx";
-import {CardPattern} from "../../components/Cards/CardPattern.tsx";
+// @ts-ignore
+import {Header, Footer, CardPattern, NoVoiting} from "../../components";
 import votesData from '../../constant/votes.json';
 
 
@@ -14,13 +13,15 @@ export const Home = () => {
                     <button>Ввести код</button>
                 </div>
                 <div className="cardsArea">
-                    {votesData.map((vote) => (
-                        <CardPattern
-                            key={vote.voteId}
-                            vote={vote}
-                        />
-                    ))}
+                    {votesData.length === 0 ? (
+                        <NoVoiting/>
+                    ) : (
+                        votesData.map((vote) => (
+                            <CardPattern key={vote.voteId} vote={vote}/>
+                        ))
+                    )}
                 </div>
+
 
             </main>
             <Footer/>

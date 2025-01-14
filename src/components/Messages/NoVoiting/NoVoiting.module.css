@@ -1,0 +1,30 @@
+.block_error{
+    display: flex;
+    width: 100%;
+    background: #84A98C;
+    border-radius: 25px;
+    justify-content: space-between;
+    padding: 20px 0 0 20px;
+    height: 250px;
+}
+
+.block_error h2{
+    font-family: "Inter Black", serif;
+    font-size: 70px;
+    width:772px;
+    margin: 0;
+}
+
+.block_error span{
+    font-family: "Inter Light", serif;
+    font-size: 30px;
+    margin: 0;
+}
+
+
+.block_error_img img{
+    width: 200px;
+    height: 200px;
+    opacity: 50%;
+    margin: 15px;
+}

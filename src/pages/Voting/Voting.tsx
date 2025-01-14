@@ -10,16 +10,29 @@ import {InputCodeField} from "./VoitingComponents/InputCodeField/InputCodeField.
 import votesData from '../../constant/votes.json';
 
 export const Voting = () => {
-
     const navigate = useNavigate();
+    const {voteId} = useParams();
 
     const handleBackClick = () => {
         navigate(-1);
-    }
-
-    const {voteId} = useParams();
+    };
 
     const CurrentVote = votesData.find((vote) => String(vote.voteId) === voteId);
+
+    if (!CurrentVote) {
+        return (
+            <>
+                <Header/>
+                <button className={style.back_button} onClick={handleBackClick}>Назад</button>
+                <main>
+                    <h2>Голосование не найдено</h2>
+                </main>
+                <Footer/>
+            </>
+        );
+    }
+
+    const filteredCandidates = candidatesData.filter(candidate => candidate.voteID === Number(voteId));
 
     return (
         <>
@@ -28,8 +41,13 @@ export const Voting = () => {
             <VoitingHeader vote={CurrentVote}/>
             <main>
                 <h2>Кандидаты</h2>
+
+                {filteredCandidates.length === 0 && (
+                    <h2>Кандидаты еще не добавлено</h2>
+                )}
+
                 <div className={style.candidatesArea}>
-                    {candidatesData.map((candidate) => (
+                    {filteredCandidates.map((candidate) => (
                         <CandidateCard
                             key={candidate.candidateId}
                             candidateId={candidate.candidateId}
@@ -40,8 +58,18 @@ export const Voting = () => {
                         />
                     ))}
                 </div>
-                <CodeMassage/>
-                <InputCodeField/>
+
+                {CurrentVote.status === 'Завершено' ? (
+                    <h2>Итоги голосования</h2>
+                ) : (
+                    <>
+                        <CodeMassage />
+                        <InputCodeField />
+                    </>
+                )}
+
+
+
             </main>
             <h2>Вопросы и ответы</h2>
             <Footer/>
