@@ -5,7 +5,8 @@
     "city": "Гатчино",
     "age": 45,
     "description": "Евгений Рябов, 45 лет, проживает в Гатчине, Ленинградская область, Россия. ...",
-    "photo": "/src/constant/Photo_Candidates/ryabov.png"
+    "photo": "/src/constant/Photo_Candidates/ryabov.png",
+    "voteID": 1
   },
   {
     "candidateId": 2,
@@ -13,6 +14,7 @@
     "city": "Ухта",
     "age": 37,
     "description": "Илья Седьмо - специалист в области IT с 15-летним опытом.",
-    "photo": "/src/constant/Photo_Candidates/sedmo.png"
+    "photo": "/src/constant/Photo_Candidates/sedmo.png",
+    "voteID": 2
   }
 ]

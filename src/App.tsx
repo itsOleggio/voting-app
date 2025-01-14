@@ -10,8 +10,8 @@ const App: React.FC = () => {
                 <Route path="*" element={<NoFound />} />
                 <Route index element={<Home />} />
                 <Route path="/" element={<Home />} />
-                <Route path="/voting" element={<Voting />} />
-                <Route path="/candidate/:candidateId" element={<Candidate />} />
+                <Route path="/voting/:voteId" element={<Voting />} />
+                <Route path="/voting/:voteId/candidate/:candidateId" element={<Candidate />} />
             </Routes>
         </Router>
     );

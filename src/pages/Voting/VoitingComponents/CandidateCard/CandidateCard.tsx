@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import style from './CandidateCard.module.css';
 import no_photo from '../../../../constant/Photo_Candidates/no_photo.jpg';
 
@@ -13,8 +13,10 @@ interface CandidateCardProps {
 export const CandidateCard = ({ candidateId, name, city, age, photo}: CandidateCardProps) => {
     const navigate = useNavigate();
 
+    const voteId = useParams().voteId;
+
     const handleDetailsClick = () => {
-        navigate(`/candidate/${candidateId}`);
+        navigate(`/voting/${voteId}/candidate/${candidateId}`);
     };
 
     return (

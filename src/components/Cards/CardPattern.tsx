@@ -5,33 +5,35 @@ import info from './Card_Assets/info.png';
 import calendar from './Card_Assets/calendar.png';
 import time from './Card_Assets/time.png';
 
-export const CardPattern = () => {
+
+// @ts-ignore
+export const CardPattern = ({vote}) => {
     const navigate = useNavigate();
 
     const handleVoteClick = () => {
-        navigate('/voting');
+        navigate(`/voting/${vote.voteId}`);
     };
 
     return (
         <div className={style.main_patterns}>
             <div className={style.card_left_area}>
                 <div className={style.card_text}>
-                    <h1>Название голосования</h1>
-                    <h3>Краткое содержание</h3>
+                    <h1>{vote.title}</h1>
+                    <h3>{vote.summary}</h3>
                 </div>
                 <div className={style.card_blocks}>
                     <div className={style.status}>
                         <img src={info} className={style.status_info} alt="" />
-                        <span>Статус</span>
+                        <span>{vote.status}</span>
                     </div>
                     <div className={style.last_2_blocks}>
                         <div className={style.date}>
                             <img src={calendar} className={style.status_info} alt="" />
-                            <span>** месяц 20**</span>
+                            <span>{vote.date}</span>
                         </div>
                         <div className={style.time}>
                             <img src={time} className={style.status_info} alt="" />
-                            <span>с **:** до **:**</span>
+                            <span>{vote.time}</span>
                         </div>
                     </div>
                 </div>

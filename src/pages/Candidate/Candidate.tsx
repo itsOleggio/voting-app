@@ -11,15 +11,17 @@ import telegram_img from "../../assets/tg.png";
 import vk_img from "../../assets/VK.png";
 import gmail_img from "../../assets/Gmail.png";
 import pdf_img from "../../assets/PDF.png";
+import votesData from "../../constant/votes.json";
 
 
 export const Candidate = () => {
 
-    const {candidateId} = useParams<{ candidateId: string }>();
+    const { voteId, candidateId } = useParams<{ voteId: string; candidateId: string }>();
     const navigate = useNavigate();
 
     const candidate = candidatesData.find(c => c.candidateId === Number(candidateId));
 
+    const currentVote = votesData.find((vote) => String(vote.voteId) === voteId);
 
     if (!candidate) {
         return (
@@ -38,7 +40,7 @@ export const Candidate = () => {
     return (
         <>
             <Header/>
-            <VoitingHeader/>
+            <VoitingHeader vote={currentVote} />
             <div className={style.candidate_area}>
                 <div className={style.name_and_but_area}>
                     <h1>{candidate.name}</h1>
