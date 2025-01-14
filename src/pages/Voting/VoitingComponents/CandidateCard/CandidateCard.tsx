@@ -7,9 +7,10 @@ interface CandidateCardProps {
     name: string;
     city: string;
     age: number;
+    photo?: string;
 }
 
-export const CandidateCard = ({ candidateId, name, city, age }: CandidateCardProps) => {
+export const CandidateCard = ({ candidateId, name, city, age, photo}: CandidateCardProps) => {
     const navigate = useNavigate();
 
     const handleDetailsClick = () => {
@@ -18,7 +19,7 @@ export const CandidateCard = ({ candidateId, name, city, age }: CandidateCardPro
 
     return (
         <div className={style.candidate_card} onClick={handleDetailsClick}>
-            <img src={no_photo} alt="" className={style.candidate_photo} />
+            <img src={photo || no_photo} alt="" className={style.candidate_photo} />
             <h3 className={style.candidate_name}>{name}</h3>
             <div className={style.candidate_text}>
                 <span>{city} </span>

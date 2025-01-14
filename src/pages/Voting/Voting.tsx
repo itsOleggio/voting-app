@@ -32,6 +32,7 @@ export const Voting = () => {
                             name={candidate.name}
                             city={candidate.city}
                             age={candidate.age}
+                            photo={candidate.photo}
                         />
                     ))}
                 </div>

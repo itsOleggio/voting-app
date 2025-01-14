@@ -1,5 +1,5 @@
 import style from './Candidate.module.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import candidatesData from "../../constant/candidates.json";
 // @ts-expect-error
 import {Header, Footer, CardPattern} from "../../components";
@@ -15,15 +15,16 @@ import pdf_img from "../../assets/PDF.png";
 
 export const Candidate = () => {
 
-    const { candidateId } = useParams<{ candidateId: string }>();
+    const {candidateId} = useParams<{ candidateId: string }>();
     const navigate = useNavigate();
 
     const candidate = candidatesData.find(c => c.candidateId === Number(candidateId));
 
+
     if (!candidate) {
         return (
             <>
-                <Header />
+                <Header/>
                 <div className={style.no_candedate}>
                     <h2>Кандидат не найден!</h2>
                     <button className={style.back_button} onClick={() => navigate(-1)}>Вернуться к списку кандидатов
@@ -37,7 +38,7 @@ export const Candidate = () => {
     return (
         <>
             <Header/>
-            <VoitingHeader />
+            <VoitingHeader/>
             <div className={style.candidate_area}>
                 <div className={style.name_and_but_area}>
                     <h1>{candidate.name}</h1>
@@ -46,7 +47,11 @@ export const Candidate = () => {
                 </div>
                 <div className={style.candidate_block}>
                     <div className={style.candidate_photo_area}>
-                        <img src={no_photo} alt="" className={style.candidate_photo}/>
+                        <img
+                            src={candidate.photo || no_photo}
+                            alt={`${candidate.name}`}
+                            className={style.candidate_photo}
+                        />
                         <div className={style.constst}>
                             <span>Контакты</span>
                             <img src={vk_img} alt="" className={style.conststImg}/>
