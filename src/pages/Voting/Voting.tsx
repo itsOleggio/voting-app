@@ -2,14 +2,19 @@
 import {Footer, Header} from '../../components';
 import {VoitingHeader} from "./VoitingComponents/VoitingHeader/VoitingHeader.tsx";
 import {CandidateCard} from "./VoitingComponents/CandidateCard/CandidateCard";
-import candidatesData from "../../constant/candidates.json";
 import style from "./Voting.module.css";
 import {useNavigate, useParams} from 'react-router-dom';
 import {CodeMassage} from "./VoitingComponents/CodeMassage/CodeMassage.tsx";
 import {InputCodeField} from "./VoitingComponents/InputCodeField/InputCodeField.tsx";
 import votesData from '../../constant/votes.json';
+import {useEffect} from "react";
+import {MakeChoice} from "./VoitingComponents/MakeChoice/MakeChoice.tsx";
+
+import { Candidate } from '../../constant/candidates.types.tsx';
+import candidatesData from "../../constant/candidates.json";
 
 export const Voting = () => {
+    const candidates: Candidate[] = candidatesData;
     const navigate = useNavigate();
     const {voteId} = useParams();
 
@@ -18,6 +23,15 @@ export const Voting = () => {
     };
 
     const CurrentVote = votesData.find((vote) => String(vote.voteId) === voteId);
+
+    useEffect(() => {
+        if(CurrentVote) {
+            document.title = CurrentVote.title
+        }
+        else {
+            document.title = "Голосование не найдено"
+        }
+    })
 
     if (!CurrentVote) {
         return (
@@ -32,7 +46,7 @@ export const Voting = () => {
         );
     }
 
-    const filteredCandidates = candidatesData.filter(candidate => candidate.voteID === Number(voteId));
+    const filteredCandidates = candidates.filter(candidate => candidate.voteID === Number(voteId));
 
     return (
         <>
@@ -65,10 +79,9 @@ export const Voting = () => {
                     <>
                         <CodeMassage />
                         <InputCodeField />
+                        <MakeChoice candidates={filteredCandidates}/>
                     </>
                 )}
-
-
 
             </main>
             <h2>Вопросы и ответы</h2>

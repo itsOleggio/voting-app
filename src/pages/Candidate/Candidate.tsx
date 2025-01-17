@@ -12,6 +12,7 @@ import vk_img from "../../assets/VK.png";
 import gmail_img from "../../assets/Gmail.png";
 import pdf_img from "../../assets/PDF.png";
 import votesData from "../../constant/votes.json";
+import {useEffect} from "react";
 
 
 export const Candidate = () => {
@@ -22,6 +23,16 @@ export const Candidate = () => {
     const candidate = candidatesData.find(c => c.candidateId === Number(candidateId));
 
     const currentVote = votesData.find((vote) => String(vote.voteId) === voteId);
+
+    useEffect(() =>{
+        if(currentVote) {
+            // @ts-ignore
+            document.title = candidate.name;
+        }
+        else {
+            document.title = "Кандидат не найден!"
+        }
+    })
 
     if (!candidate) {
         return (
@@ -53,16 +64,38 @@ export const Candidate = () => {
                             src={candidate.photo || no_photo}
                             alt={`${candidate.name}`}
                             className={style.candidate_photo}
+                            onContextMenu={(e) => e.preventDefault()}
+                            onDragStart={(e) => e.preventDefault()}
                         />
                         <div className={style.constst}>
                             <span>Контакты</span>
-                            <img src={vk_img} alt="" className={style.conststImg}/>
-                            <img src={telegram_img} alt="" className={style.conststImg}/>
-                            <img src={gmail_img} alt="" className={style.conststImg}/>
+                            <img
+                                src={vk_img}
+                                 alt=""
+                                className={style.conststImg}
+                            />
+                            <img
+                                src={telegram_img}
+                                alt=""
+                                className={style.conststImg}
+                            />
+                            <img
+                                src={gmail_img}
+                                alt=""
+                                className={style.conststImg}
+                                onContextMenu={(e) => e.preventDefault()}
+                                onDragStart={(e) => e.preventDefault()}
+                            />
                         </div>
                         <div className={style.link_to_program}>
                             <span>Ссылка на программу</span>
-                            <img src={pdf_img} alt="" className={style.conststImg}/>
+                            <img
+                                src={pdf_img}
+                                alt=""
+                                className={style.conststImg}
+                                onContextMenu={(e) => e.preventDefault()}
+                                onDragStart={(e) => e.preventDefault()}
+                            />
                         </div>
                     </div>
                     <div className={style.candidate_info}>

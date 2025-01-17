@@ -40,19 +40,37 @@
     gap: 24px;
 }
 
-.status {
-    max-width: 440px;
-    min-width: 170px;
+.status, .date, .time{
+    user-select: none;
+    pointer-events: none;
     height: 60px;
     background: #52796F;
     border-radius: 15px;
-    display: inline-flex;
+    padding-right: 20px;
     flex-direction: row;
     align-items: center;
+}
+
+.status {
+    max-width: 440px;
+    min-width: 170px;
+    display: inline-flex;
     margin-bottom: 24px;
+}
+
+.date{
+    max-width: 550px;
+    min-width: 210px;
+    display: inline-flex;
     padding-right: 20px;
 }
 
+.time{
+    /*width: 300px;*/
+    max-width: 350px;
+    min-width: 250px;
+    display: flex;
+}
 
 
 .status span, .date span, .time span{
@@ -75,30 +93,8 @@
     display: flex;
     flex-direction: column;
 }
-.date{
-    max-width: 550px;
-    min-width: 210px;
-    height: 60px;
-    background: #52796F;
-    border-radius: 15px;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 20px;
-}
 
-.time{
-    /*width: 300px;*/
-    max-width: 350px;
-    min-width: 250px;
-    height: 60px;
-    background: #52796F;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 20px;
-}
+
 
 .card_button{
     background: #52796F;
@@ -124,4 +120,6 @@
     width: 380px;
     height: 380px;
     z-index: 0;
+    user-select: none;
+    pointer-events: none;
 }

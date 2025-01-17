@@ -13,6 +13,8 @@
     flex-direction: column;
     width: 500px;
     height: 70px;
+    user-select: none;
+    pointer-events: none;
 }
 
 .first_block span {
@@ -40,6 +42,8 @@
 .logo {
     width: 200px;
     height: 80px;
+    user-select: none;
+    pointer-events: none;
 }
 
 .footer h3{

@@ -1,0 +1,80 @@
+.makeChoice{
+    background: #84A98C;
+    border-radius: 25px;
+    display: inline-flex;
+    min-width: 200px;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.makeChoice h2 {
+    margin: 25px 0 20px 25px;
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+    position: relative;
+    font-size: 32px;
+}
+
+.checkboxInput {
+    display: none;
+}
+
+.customCheckbox {
+    width: 75px;
+    height: 75px;
+    background: white;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.checkboxInput:checked + .customCheckbox {
+    background-color: #ffffff;
+}
+
+.checkboxInput:checked + .customCheckbox::after {
+    content: '✔';
+    color: #ff0000;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.submitButton {
+    width: 434px;
+    height: 60px;
+    font-size: 26px;
+    color: #ffffff;
+    background-color: #52796F;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    font-family: "Inter Black", serif;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.submitButton:hover {
+    background-color: #84A98C;
+    cursor: pointer;
+    color: #ffffff;
+}

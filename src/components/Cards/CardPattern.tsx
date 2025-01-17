@@ -39,7 +39,13 @@ export const CardPattern = ({vote}) => {
                 </div>
             </div>
             <div className={style.card_right_area}>
-                <img src={vote_img} alt="" className={style.vote_img} />
+                <img
+                    src={vote_img}
+                    alt=""
+                    className={style.vote_img}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
+                />
                 <button className={style.card_button} onClick={handleVoteClick}>
                     Перейти к выборам
                 </button>

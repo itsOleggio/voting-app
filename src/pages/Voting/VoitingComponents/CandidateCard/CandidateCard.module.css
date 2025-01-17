@@ -3,6 +3,7 @@
     height: 504px;
     background: #84A98C;
     border-radius: 25px;
+    user-select: none;
 }
 
 .candidate_card:hover{
@@ -26,4 +27,14 @@
     display: flex;
     justify-content: center;
     gap: 4px;
+}
+
+.image_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: transparent;
 }

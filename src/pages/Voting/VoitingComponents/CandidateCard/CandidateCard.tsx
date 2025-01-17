@@ -21,7 +21,14 @@ export const CandidateCard = ({ candidateId, name, city, age, photo}: CandidateC
 
     return (
         <div className={style.candidate_card} onClick={handleDetailsClick}>
-            <img src={photo || no_photo} alt="" className={style.candidate_photo} />
+            {/*<div className={style.image_overlay}></div>*/}
+            <img
+                src={photo || no_photo}
+                alt=""
+                className={style.candidate_photo}
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+            />
             <h3 className={style.candidate_name}>{name}</h3>
             <div className={style.candidate_text}>
                 <span>{city} </span>
