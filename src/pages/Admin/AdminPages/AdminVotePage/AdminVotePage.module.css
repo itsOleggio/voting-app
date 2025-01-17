@@ -1,0 +1,90 @@
+.btn_back{
+    margin: 0 0 20px 0;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #52796F;
+    font-family: "Inter Thin", serif;
+    padding-left: 0;
+}
+
+.btn_back:hover{
+    cursor: pointer;
+    color: #84A98C;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.form input, .form textarea, .form select {
+    font-size: 18px;
+    color: #52796F;
+    font-family: "Inter Medium", serif;
+}
+
+.form input{
+    width: 600px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+    color: #52796F;
+}
+
+.form textarea{
+    resize: none;
+    width: 600px;
+    height: 200px;
+    border-radius: 15px;
+    border: none;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+.form select{
+    width: 600px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+.btn_area{
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+.btn_area button{
+    width: 240px;
+    height: 76px;
+    font-size: 24px;
+    border: 0;
+    border-radius: 25px;
+}
+
+.btn_save{
+    background: #52796F;
+    color: #CAD2C5;
+}
+
+.btn_save:hover{
+    background: #9ccca6;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.btn_delete{
+    background: #df4646;
+    color: #ffffff;
+}
+
+.btn_delete:hover{
+    background: #ff0000;
+    cursor: pointer;
+}

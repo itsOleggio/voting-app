@@ -3,6 +3,7 @@ import style from './AdminVotes.module.css';
 import { NavigationMenuBar, AdminHeader } from '../../AdminComponents/';
 import { useState, useEffect } from "react";
 import votesData from '../../../../constant/Votes/votes.json';
+import { useNavigate } from 'react-router-dom';
 
 type Vote = {
     voteId: number;
@@ -19,6 +20,7 @@ export const AdminVotes = () => {
     const [filteredVotes, setFilteredVotes] = useState<Vote[]>([]); // отфильтрованные данные
     const [searchID, setSearchID] = useState<string>(''); // строка поиска
     const [sortOption, setSortOption] = useState<string>(''); // текущий критерий сортировки
+    const navigate = useNavigate();
 
     useEffect(() => {
         setVotes(votesData);
@@ -53,11 +55,20 @@ export const AdminVotes = () => {
         setFilteredVotes(sortedVotes);
     };
 
+    const handleVoteClick = (voteId: number) => {
+        navigate(`/admin/vote/${voteId}`)
+    }
+
+    const HandleLogout = () => {
+        navigate('/');
+    }
+
     document.title = 'Админ панель для голосования | Голосования';
 
+    // @ts-ignore
     return (
         <>
-            <AdminHeader />
+            <AdminHeader HandleLogout={HandleLogout} />
             <div className={style.adminVotes}>
                 <NavigationMenuBar />
                 <div className={style.RightBlock}>
@@ -85,7 +96,11 @@ export const AdminVotes = () => {
                     <div className={style.voteList}>
                         {filteredVotes.length > 0 ? (
                             filteredVotes.map((vote) => (
-                                <div key={vote.voteId} className={style.voteItem}>
+                                <div
+                                    key={vote.voteId}
+                                    className={style.voteItem}
+                                    onClick={() => handleVoteClick(vote.voteId)}
+                                >
                                 <h3>{'ID:' + vote.voteId + ' ' + vote.title}</h3>
                                     <p>{vote.summary}</p>
                                     <p><strong>Статус:</strong> {vote.status}</p>

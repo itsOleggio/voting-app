@@ -106,10 +106,12 @@ export const Admin = () => {
                         <span>{notStartedVotes.length}</span>
                     </div>
                     <div className={style.status_info}>
+                        {/*NEED FIX*/}
                         <p>Всего проголосовало </p>
                         <span>0</span>
                     </div>
                     <div className={style.status_info}>
+                        {/*NEED FIX*/}
                         <p>Запросов на создание </p>
                         <span>0</span>
                     </div>
