@@ -6,12 +6,14 @@ import style from "./Voting.module.css";
 import {useNavigate, useParams} from 'react-router-dom';
 import {CodeMassage} from "./VoitingComponents/CodeMassage/CodeMassage.tsx";
 import {InputCodeField} from "./VoitingComponents/InputCodeField/InputCodeField.tsx";
-import votesData from '../../constant/votes.json';
+import votesData from '../../constant/Votes/votes.json';
 import {useEffect} from "react";
 import {MakeChoice} from "./VoitingComponents/MakeChoice/MakeChoice.tsx";
 
-import { Candidate } from '../../constant/candidates.types.tsx';
-import candidatesData from "../../constant/candidates.json";
+import { Candidate } from '../../constant/Candidates/candidates.types.tsx';
+import candidatesData from "../../constant/Candidates/candidates.json";
+import {ThanksForVoiting} from "./VoitingComponents/TnanksForVoiting/ThanksForVoiting.tsx";
+import {VoitingResults} from "./VoitingComponents/VoitingResults/VoitingResults.tsx";
 
 export const Voting = () => {
     const candidates: Candidate[] = candidatesData;
@@ -74,12 +76,14 @@ export const Voting = () => {
                 </div>
 
                 {CurrentVote.status === 'Завершено' ? (
-                    <h2>Итоги голосования</h2>
+                    <VoitingResults/>
                 ) : (
                     <>
                         <CodeMassage />
                         <InputCodeField />
                         <MakeChoice candidates={filteredCandidates}/>
+                        <ThanksForVoiting />
+                        <VoitingResults/>
                     </>
                 )}
 

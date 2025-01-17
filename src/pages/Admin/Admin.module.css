@@ -1,0 +1,51 @@
+.admin{
+
+}
+
+.admin header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+
+.auth_input{
+    margin: auto;
+    width: 50%;
+    background: #84A98C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px
+;
+}
+
+.auth_input input{
+    width: 300px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    margin: 20px 0 20px 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.auth_input button{
+    background: #CAD2C5;
+    border-radius: 15px;
+    border: none;
+    width: 320px;
+    height: 60px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #52796F;
+    font-family: "Inter Medium", serif;
+}
+
+.auth_input button:hover{
+    background: rgba(202, 210, 197, 0.85);
+    cursor: pointer;
+}

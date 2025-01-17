@@ -1,6 +1,6 @@
 import style from './Candidate.module.css';
 import {useNavigate, useParams} from 'react-router-dom';
-import candidatesData from "../../constant/candidates.json";
+import candidatesData from "../../constant/Candidates/candidates.json";
 // @ts-expect-error
 import {Header, Footer, CardPattern} from "../../components";
 import {VoitingHeader} from "../Voting/VoitingComponents/VoitingHeader/VoitingHeader.tsx";
@@ -11,7 +11,7 @@ import telegram_img from "../../assets/tg.png";
 import vk_img from "../../assets/VK.png";
 import gmail_img from "../../assets/Gmail.png";
 import pdf_img from "../../assets/PDF.png";
-import votesData from "../../constant/votes.json";
+import votesData from "../../constant/Votes/votes.json";
 import {useEffect} from "react";
 
 

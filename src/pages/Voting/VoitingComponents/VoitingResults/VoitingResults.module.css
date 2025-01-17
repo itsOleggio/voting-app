@@ -1,0 +1,13 @@
+.block_result{
+    display: flex;
+    flex-direction: row;
+    background: #84A98C;
+    border-radius: 25px;
+}
+
+.br_left{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    width: 300px;
+}

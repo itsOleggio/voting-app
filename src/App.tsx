@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // @ts-expect-error
-import { Home, Voting, NoFound, Candidate} from './pages';
+import {Home, Voting, NoFound, Candidate, Admin} from './pages';
 
 const App: React.FC = () => {
     return (
@@ -12,6 +12,7 @@ const App: React.FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/voting/:voteId" element={<Voting />} />
                 <Route path="/voting/:voteId/candidate/:candidateId" element={<Candidate />} />
+                <Route path='/admin' element={<Admin />} />
             </Routes>
         </Router>
     );

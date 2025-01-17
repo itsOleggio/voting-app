@@ -1,6 +1,6 @@
 // @ts-ignore
 import {Header, Footer, CardPattern, NoVoiting} from "../../components";
-import votesData from '../../constant/votes.json';
+import votesData from '../../constant/Votes/votes.json';
 
 
 export const Home = () => {

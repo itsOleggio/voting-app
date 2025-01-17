@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from './MakeChoice.module.css';
-import { Candidate } from '../../../../constant/candidates.types.tsx';
+import { Candidate } from '../../../../constant/Candidates/candidates.types.tsx';
 
 interface MakeChoiceProps {
     candidates: Candidate[];
