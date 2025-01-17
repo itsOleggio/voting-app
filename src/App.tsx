@@ -2,6 +2,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // @ts-expect-error
 import {Home, Voting, NoFound, Candidate, Admin} from './pages';
+// @ts-ignore
+import {AdminVotes, AdminCandidates, AdminRequest} from "./pages/Admin/AdminPages/";
+
 
 const App: React.FC = () => {
     return (
@@ -13,6 +16,11 @@ const App: React.FC = () => {
                 <Route path="/voting/:voteId" element={<Voting />} />
                 <Route path="/voting/:voteId/candidate/:candidateId" element={<Candidate />} />
                 <Route path='/admin' element={<Admin />} />
+                <Route path="/admin/votes" element={<AdminVotes />} />
+                <Route path="/admin/candidates" element={<AdminCandidates />} />
+                <Route path="/admin/requests" element={<AdminRequest />} />
+
+
             </Routes>
         </Router>
     );

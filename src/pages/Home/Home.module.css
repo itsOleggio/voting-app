@@ -1,0 +1,26 @@
+.main_area{
+    display: flex;
+    flex-direction: column;
+}
+
+.main_first_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: inherit;
+}
+
+.main_first_line button {
+    width: 240px;
+    height: 76px;
+    font-size: 24px;
+    color: #CAD2C5;
+    background: #52796F;
+    border: 0;
+    border-radius: 25px;
+}
+
+.main_first_line button:hover {
+    background: rgb(62, 92, 86);
+    cursor: pointer;
+}

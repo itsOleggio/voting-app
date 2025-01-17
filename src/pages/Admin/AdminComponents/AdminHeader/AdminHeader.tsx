@@ -1,7 +1,10 @@
 import style from './AdminHeader.module.css'
 
-// @ts-ignore
-export const AdminHeader = (HandleLogout) => {
+interface AdminHeaderProps {
+    HandleLogout: () => void;
+}
+
+export const AdminHeader = ( { HandleLogout }: AdminHeaderProps) => {
     return (
         <header>
             <h1>Админ панель для голосования</h1>

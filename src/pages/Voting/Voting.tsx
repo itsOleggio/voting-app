@@ -55,7 +55,7 @@ export const Voting = () => {
             <Header/>
             <button className={style.back_button} onClick={handleBackClick}>Назад</button>
             <VoitingHeader vote={CurrentVote}/>
-            <main>
+            <main className={style.main_area}>
                 <h2>Кандидаты</h2>
 
                 {filteredCandidates.length === 0 && (

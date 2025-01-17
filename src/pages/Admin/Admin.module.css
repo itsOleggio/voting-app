@@ -2,6 +2,12 @@
 
 }
 
+main{
+    display: inline-flex;
+    gap: 50px;
+    flex-direction: row;
+}
+
 .admin header{
     display: flex;
     flex-direction: row;
@@ -48,4 +54,32 @@
 .auth_input button:hover{
     background: rgba(202, 210, 197, 0.85);
     cursor: pointer;
+}
+
+.status{
+    /*width: 100%;*/
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    background: white;
+    border-radius: 25px;
+    padding: 20px 30px;
+}
+
+.status_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.status_info span{
+    font-size: 40px;
+    font-family: "Inter Black", serif;
+    color: #52796F;
+    margin-bottom: 10px;
+}
+
+.status_info p {
+    font-size: 16px;
+    font-family: "Inter Medium", serif;
+    color: #52796F;
 }

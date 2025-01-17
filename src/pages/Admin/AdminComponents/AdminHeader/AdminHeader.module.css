@@ -1,5 +1,14 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
 h1{
     font-family: "Inter Thin", serif;
+    user-select: none;
+    pointer-events: none;
 }
 
 .btn_logout {

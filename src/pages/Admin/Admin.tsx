@@ -1,9 +1,20 @@
 import style from './Admin.module.css';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import {NavigationMenuBar} from "./AdminComponents/NavigationMenuBar/NavigationMenuBar.tsx";
-import {AdminHeader} from "./AdminComponents/AdminHeader/AdminHeader.tsx";
+// @ts-ignore
+import {NavigationMenuBar, AdminHeader} from "./AdminComponents";
 
+type Vote = {
+    candidateId: number;
+    count: number;
+    status: string;
+};
+
+type Candidate = {
+    id: number;
+    name: string;
+    party: string;
+};
 
 export const Admin = () => {
 
@@ -11,9 +22,29 @@ export const Admin = () => {
     const[username, setUsername] = useState('');
     const[password, setPassword] = useState('');
 
+    // @ts-ignore
+    const [candidates, setCandidates] = useState<Candidate[]>([]);
+    const [votes, setVotes] = useState<Vote[]>([]);
+
+    useEffect(() => {
+        fetch('src/constant/Candidates/candidates.types.tsx')
+            .then(response => response.json())
+            .then(data => setCandidates(data))
+            .catch(error => console.error('Ошибка при загрузке кандидатов:', error));
+
+        fetch('src/constant/Votes/votes.json')
+            .then(response => response.json())
+            .then(data => setVotes(data))
+            .catch(error => console.error('Ошибка при загрузке голосований:', error));
+    }, [])
+
+    const activeVotes = votes.filter((vote) => vote.status === 'Активно');
+    const finishedVotes = votes.filter((vote) => vote.status === 'Завершено');
+    const notStartedVotes = votes.filter((vote) => vote.status === 'Не начато');
+
     const navigate = useNavigate();
 
-    document.title = 'Админ панель для голосования';
+    document.title = 'Админ панель для голосования | Главная';
 
     const adminCredentials = {
         username: 'admin',
@@ -53,10 +84,36 @@ export const Admin = () => {
 
     return (
         <div className={style.admin}>
-            <AdminHeader username={username} HandleLogout={HandleLogout} />
+            <AdminHeader HandleLogout={HandleLogout} />
 
             <main>
                 <NavigationMenuBar/>
+                <div className={style.status}>
+                    <div className={style.status_info}>
+                        <p>Всего голосований </p>
+                        <span>{votes.length}</span>
+                    </div>
+                    <div className={style.status_info}>
+                        <p>Активных голосований </p>
+                        <span>{activeVotes.length}</span>
+                    </div>
+                    <div className={style.status_info}>
+                        <p>Не начатых голосований </p>
+                        <span>{finishedVotes.length}</span>
+                    </div>
+                    <div className={style.status_info}>
+                        <p>Завершенных голосований</p>
+                        <span>{notStartedVotes.length}</span>
+                    </div>
+                    <div className={style.status_info}>
+                        <p>Всего проголосовало </p>
+                        <span>0</span>
+                    </div>
+                    <div className={style.status_info}>
+                        <p>Запросов на создание </p>
+                        <span>0</span>
+                    </div>
+                </div>
             </main>
 
         </div>

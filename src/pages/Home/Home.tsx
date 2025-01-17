@@ -1,14 +1,15 @@
 // @ts-ignore
 import {Header, Footer, CardPattern, NoVoiting} from "../../components";
 import votesData from '../../constant/Votes/votes.json';
+import style from './Home.module.css';
 
 
 export const Home = () => {
     return (
         <>
             <Header/>
-            <main>
-                <div className="main_first_line">
+            <main className={style.main_area}>
+                <div className={style.main_first_line}>
                     <h1>Голосования</h1>
                     <button>Ввести код</button>
                 </div>

@@ -1,0 +1,104 @@
+.adminVotes{
+    display: flex;
+    flex-direction: row;
+}
+
+.voteItem{
+    border: 1px solid #84A98C;
+    border-radius: 25px;
+    padding: 15px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.voteItem:hover{
+    cursor: pointer;
+    background: rgba(82, 121, 111, 0.17);
+}
+
+.voteItem h3{
+    margin: 0;
+}
+
+.controls{
+    padding-left: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.controls button{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background: #52796F;
+    color: #CAD2C5;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.controls button:hover{
+    background: rgba(82, 121, 111, 0.48);
+    color: white;
+}
+
+.controls select{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background: #52796F;
+    color: #CAD2C5;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.controls select:hover{
+    background: rgba(82, 121, 111, 0.48);
+    color: white;
+}
+
+.controls select option{
+    background: #52796F;
+    color: #CAD2C5;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.controls select option:hover{
+    background: rgba(82, 121, 111, 0.48);
+    color: white;
+}
+
+.controls select:focus {
+    outline: none;
+}
+
+.controls input{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background: #85bcae;
+    color: #2F3E46;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.controls input:hover{
+    background: rgba(82, 121, 111, 0.48);
+    color: white;
+}
+
+.controls input::placeholder{
+    color: #2F3E46;
+}
+
+.controls input:focus {
+    outline: none;
+}

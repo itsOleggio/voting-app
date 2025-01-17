@@ -8,7 +8,7 @@ export const NavigationMenuBar = () => {
                 <li className={style.navItem}>
                     <NavLink
                         to="/admin"
-                        className={({ isActive }) => isActive ? style.active : ""}
+                        className={({ isActive }) => (isActive && window.location.pathname === '/admin' ? style.active : "")}
                     >
                         Главная
                     </NavLink>

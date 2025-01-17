@@ -1,6 +1,7 @@
 .navBar {
     background-color: #84A98C;
     width: 200px;
+    height: 100%;
     border-radius: 25px;
     display: flex;
     justify-content: center;
