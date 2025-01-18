@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // @ts-expect-error
 import {Home, Voting, NoFound, Candidate, Admin} from './pages';
 // @ts-ignore
-import {AdminVotes, AdminCandidates, AdminRequest, AdminVotePage} from "./pages/Admin/AdminPages/";
+import {AdminVotes, AdminCandidates, AdminRequest, AdminVotePage, AdminAddVote} from "./pages/Admin/AdminPages/";
 
 
 const App: React.FC = () => {
@@ -20,7 +20,7 @@ const App: React.FC = () => {
                 <Route path="/admin/candidates" element={<AdminCandidates />} />
                 <Route path="/admin/requests" element={<AdminRequest />} />
                 <Route path="/admin/vote/:voteId" element={<AdminVotePage />} />
-
+                <Route path="/admin/vote/add" element={<AdminAddVote />} />
             </Routes>
         </Router>
     );

@@ -1,0 +1,73 @@
+.adminAddVote {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn_back{
+    margin: 0 0 20px 0;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #000000;
+    font-family: "Inter Thin", serif;
+    padding-left: 0;
+}
+
+.btn_back:hover{
+    cursor: pointer;
+    color: #84A98C;
+}
+
+.adminAddVote h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formContainer label {
+    display: block;
+    margin: 10px 0;
+}
+
+.adminAddVote input, .adminAddVote textarea {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.adminAddVote textarea{
+    resize: vertical;
+    min-height: 100px;
+}
+
+.adminAddVote select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn_add{
+    background-color: #4CAF50;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.btn_add:hover{
+    background-color: #45a049;
+}
+
+
+
+

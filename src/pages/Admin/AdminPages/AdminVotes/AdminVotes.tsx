@@ -63,6 +63,10 @@ export const AdminVotes = () => {
         navigate('/');
     }
 
+    const AddVote = () => {
+        navigate('/admin/vote/add');
+    }
+
     document.title = 'Админ панель для голосования | Голосования';
 
     // @ts-ignore
@@ -88,7 +92,7 @@ export const AdminVotes = () => {
                             onChange={(e) => setSearchID(e.target.value)}
                         />
                         <button onClick={handleSearch}>Искать</button>
-                        <button>Добавить голосование</button>
+                        <button onClick={AddVote}>Добавить голосование</button>
 
                     </div>
 

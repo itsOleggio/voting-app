@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 // @ts-ignore
 import {NavigationMenuBar, AdminHeader} from "./AdminComponents";
-import { generatePDF } from "../../utils/generatePDF.tsx";
+import {generatePDF} from "../../utils/generatePDF.tsx";
 
 
 type Vote = {
@@ -20,9 +20,9 @@ type Candidate = {
 
 export const Admin = () => {
 
-    const[isAuth, setIsAuth] = useState(true);
-    const[username, setUsername] = useState('');
-    const[password, setPassword] = useState('');
+    const [isAuth, setIsAuth] = useState(true);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     // @ts-ignore
     const [candidates, setCandidates] = useState<Candidate[]>([]);
@@ -56,9 +56,9 @@ export const Admin = () => {
     // @ts-ignore
     const handleLogin = (e) => {
         e.preventDefault();
-        if(adminCredentials.username === username && adminCredentials.password === password){
+        if (adminCredentials.username === username && adminCredentials.password === password) {
             setIsAuth(true);
-        }else{
+        } else {
             alert('Неправильный логин или пароль');
         }
     }
@@ -69,7 +69,7 @@ export const Admin = () => {
     }
 
 
-    if(!isAuth){
+    if (!isAuth) {
         return (
             <div className={style.admin}>
                 <h1>Админ панель для голосования</h1>
@@ -86,7 +86,7 @@ export const Admin = () => {
 
     return (
         <div className={style.admin}>
-            <AdminHeader HandleLogout={HandleLogout} />
+            <AdminHeader HandleLogout={HandleLogout}/>
 
             <main>
                 <NavigationMenuBar/>
@@ -133,10 +133,7 @@ export const Admin = () => {
                         Скачать отчет
                     </button>
                 </div>
-
-
             </main>
-
         </div>
     );
 }
