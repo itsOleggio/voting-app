@@ -20,7 +20,7 @@ type Candidate = {
 
 export const Admin = () => {
 
-    const[isAuth, setIsAuth] = useState(true); // ПОКА БЕЗ ЛОГИНА
+    const[isAuth, setIsAuth] = useState(true);
     const[username, setUsername] = useState('');
     const[password, setPassword] = useState('');
 
