@@ -3,6 +3,8 @@ import {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 // @ts-ignore
 import {NavigationMenuBar, AdminHeader} from "./AdminComponents";
+import { generatePDF } from "../../utils/generatePDF.tsx";
+
 
 type Vote = {
     candidateId: number;
@@ -88,34 +90,51 @@ export const Admin = () => {
 
             <main>
                 <NavigationMenuBar/>
-                <div className={style.status}>
-                    <div className={style.status_info}>
-                        <p>Всего голосований </p>
-                        <span>{votes.length}</span>
+                <div className={style.status_work_area}>
+                    <div className={style.status}>
+                        <div className={style.status_info}>
+                            <p>Всего голосований </p>
+                            <span>{votes.length}</span>
+                        </div>
+                        <div className={style.status_info}>
+                            <p>Активных голосований </p>
+                            <span>{activeVotes.length}</span>
+                        </div>
+                        <div className={style.status_info}>
+                            <p>Не начатых голосований </p>
+                            <span>{finishedVotes.length}</span>
+                        </div>
+                        <div className={style.status_info}>
+                            <p>Завершенных голосований</p>
+                            <span>{notStartedVotes.length}</span>
+                        </div>
+                        <div className={style.status_info}>
+                            {/*NEED FIX*/}
+                            <p>Всего проголосовало </p>
+                            <span>0</span>
+                        </div>
+                        <div className={style.status_info}>
+                            {/*NEED FIX*/}
+                            <p>Запросов на создание </p>
+                            <span>0</span>
+                        </div>
                     </div>
-                    <div className={style.status_info}>
-                        <p>Активных голосований </p>
-                        <span>{activeVotes.length}</span>
-                    </div>
-                    <div className={style.status_info}>
-                        <p>Не начатых голосований </p>
-                        <span>{finishedVotes.length}</span>
-                    </div>
-                    <div className={style.status_info}>
-                        <p>Завершенных голосований</p>
-                        <span>{notStartedVotes.length}</span>
-                    </div>
-                    <div className={style.status_info}>
-                        {/*NEED FIX*/}
-                        <p>Всего проголосовало </p>
-                        <span>0</span>
-                    </div>
-                    <div className={style.status_info}>
-                        {/*NEED FIX*/}
-                        <p>Запросов на создание </p>
-                        <span>0</span>
-                    </div>
+                    <button
+                        className={style.generateReportButton}
+                        onClick={() =>
+                            generatePDF(
+                                votes,
+                                candidates,
+                                adminCredentials.username,
+                                new Date().toLocaleDateString()
+                            )
+                        }
+                    >
+                        Скачать отчет
+                    </button>
                 </div>
+
+
             </main>
 
         </div>

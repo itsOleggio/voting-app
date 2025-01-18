@@ -76,14 +76,15 @@ export const Voting = () => {
                 </div>
 
                 {CurrentVote.status === 'Завершено' ? (
-                    <VoitingResults/>
+                    <VoitingResults votes={votesData} candidates={filteredCandidates} />
+
                 ) : (
                     <>
                         <CodeMassage />
                         <InputCodeField />
                         <MakeChoice candidates={filteredCandidates}/>
                         <ThanksForVoiting />
-                        <VoitingResults/>
+                        <VoitingResults votes={votesData} candidates={filteredCandidates} />
                     </>
                 )}
 

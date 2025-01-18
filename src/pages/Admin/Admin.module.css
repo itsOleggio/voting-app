@@ -51,6 +51,11 @@ main{
     font-family: "Inter Medium", serif;
 }
 
+.status_work_area{
+    display: flex;
+    flex-direction: column;
+}
+
 .auth_input button:hover{
     background: rgba(202, 210, 197, 0.85);
     cursor: pointer;
@@ -83,3 +88,21 @@ main{
     font-family: "Inter Medium", serif;
     color: #52796F;
 }
+
+.generateReportButton{
+    margin: 20px 0;
+    background: #52796F;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: "Inter Regular", serif;
+    border-radius: 25px;
+    width: 250px;
+    height: 60px;
+}
+
+.generateReportButton:hover{
+    cursor: pointer;
+    background: #84A98C;
+}
+

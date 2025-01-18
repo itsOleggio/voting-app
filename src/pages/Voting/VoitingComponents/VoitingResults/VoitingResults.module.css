@@ -1,13 +1,27 @@
-.block_result{
+.block_result {
     display: flex;
     flex-direction: row;
     background: #84A98C;
     border-radius: 25px;
+    padding: 20px;
 }
 
-.br_left{
+.br_left {
     display: flex;
     flex-direction: column;
     margin-right: 50px;
     width: 300px;
+}
+
+.br_left span {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #000000;
+}
+
+.br_right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
